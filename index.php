@@ -13,7 +13,18 @@
 
 <body>
     <div id="app">
-        
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-12 border border-3 rounded-3">
+                    <h1> To-do list </h1>
+                    <ul>
+                        <li v-for="">
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
 

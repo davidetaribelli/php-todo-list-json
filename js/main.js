@@ -3,12 +3,13 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
-            apiUrl: "api.php", 
+            apiUrl: "api.php" ,
+
         }
     },
     mounted(){
         axios.get(this.apiUrl).then((response) => {
-            console.log("Dati ricevbuti:", response.data)
+            console.log("Dati ricevuti:", response.data);
         });
     } 
 }).mount('#app')
