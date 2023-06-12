@@ -9,7 +9,6 @@ createApp({
     },
     mounted(){
         axios.get(this.apiUrl).then((response) => {
-            console.log("Dati ricevuti:", response.data);
             this.arrayList = response.data;
         });
     } 
