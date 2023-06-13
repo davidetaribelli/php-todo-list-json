@@ -26,6 +26,16 @@ createApp({
             const data = {newTask: this.newTask};
 
             this.sendData(data);
+        },
+        deleteTask(i){
+            const data = {deleteIndex : i};
+
+            this.sendData(data);
+        },
+        removeAllTask(){
+            const data = {deleteAll : true}
+
+            this.sendData(data);
         }
     } 
 }).mount('#app')

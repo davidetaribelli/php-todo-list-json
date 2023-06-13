@@ -10,6 +10,15 @@ if(isset($_POST['newTask'])){
     $todoListDati[] = $_POST['newTask'];
     file_put_contents("dati.json", json_encode($todoListDati));
 }
+else if(isset($_POST['deleteIndex'])){
+    $i = $_POST['deleteIndex'];
+    $todoListDati[$i] = "HAI COMPLETATO LA TASK";
+    file_put_contents("dati.json", json_encode($todoListDati));
+}
+else if(isset($_POST['deleteAll'])){
+    $todoListDati = [];
+    file_put_contents("dati.json", json_encode($todoListDati));
+}
 
 $todoList = json_encode($todoListDati);
 

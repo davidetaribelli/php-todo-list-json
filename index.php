@@ -19,18 +19,19 @@
                 <div class="col-12 rounded-3 bg-primary text-white p-3">
                     <h1 class="border-bottom"> To-do list </h1>
                     <ul class="list-group">
-                        <li v-for="element in todoList" class="list-group-item d-flex justify-content-between align-items-center">
+                        <li v-for="(element,i) in todoList" @click="deleteTask(i)" class="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                                {{element}}
+                                <span>{{element}}</span>
                             </div>
-                            <div class="p-2 bg-primary text-white rounded-3">
+                            <div class="p-2 bg-primary text-white rounded-3" @click="deleteTask">
                                 <i class="fa-solid fa-trash-can"></i>
                             </div>
                         </li>
                     </ul>
                     <div class="input-group my-3">
                         <input type="text" v-model="newTask" @keyup.enter="addNewTask" class="form-cxontrol w-100 p-2 rounded-3 border-0" placeholder="Add to list">
-                        <button @click="addNewTask" class="btn btn-success my-2 px-3 rounded-3">Add</button>
+                        <button @click="addNewTask" class="btn btn-success my-2 me-4 px-3 rounded-3">Add</button>
+                        <button @click="removeAllTask" class="btn btn-danger my-2 px-3 rounded-3">Remove</button>
                     </div>
                 </div>
             </div>
