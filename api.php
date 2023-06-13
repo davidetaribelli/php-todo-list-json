@@ -1,16 +1,18 @@
 <?php
-
-$list = [
-    ['text' => 'Creare un index.php in cui includere Vue ed Axios, entrambi tramite CDN.'],
-    ['text' => 'Creare una seconda pagina api.php'],
-    ['text' => 'Restituire i dati in JSON'],
-    ['text' => 'Fare una chiamata axios alla pagina api.php'],
-    ['text' => 'Stampare in console o in pagina col v-for'],
-];
-
+ // imposto l'header che avvisa del contenuto json
 header('Content-Type: application/json');
-$stringData = json_encode($list);
 
-echo $stringData ;
+$todoList = file_get_contents("dati.json");
+
+$todoListDati = json_decode($todoList, true);
+
+if(isset($_POST['newTask'])){
+    $todoListDati[] = $_POST['newTask'];
+    file_put_contents("dati.json", json_encode($todoListDati));
+}
+
+$todoList = json_encode($todoListDati);
+
+echo $todoList;
 
 ?>
