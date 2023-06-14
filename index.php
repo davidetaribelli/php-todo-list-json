@@ -23,8 +23,8 @@
                             <div>
                                 <span>{{element}}</span>
                             </div>
-                            <div class="p-2 bg-primary text-white rounded-3" @click="deleteTask">
-                                <i class="fa-solid fa-trash-can"></i>
+                            <div class="p-2 bg-primary text-white rounded-3">
+                                <i class="fa-solid fa-trash-can" @click="deleteTask"></i>
                             </div>
                         </li>
                     </ul>

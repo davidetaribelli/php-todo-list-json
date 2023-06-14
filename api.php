@@ -12,7 +12,7 @@ if(isset($_POST['newTask'])){
 }
 else if(isset($_POST['deleteIndex'])){
     $i = $_POST['deleteIndex'];
-    $todoListDati[$i] = "HAI COMPLETATO LA TASK";
+    array_splice($todoListDati, $i, 1);
     file_put_contents("dati.json", json_encode($todoListDati));
 }
 else if(isset($_POST['deleteAll'])){
